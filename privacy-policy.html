@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – Ball Chaser World Tour</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sky: #e0f4ff;
+      --grass: #d4f5c4;
+      --blue: #2a8fe8;
+      --orange: #ff7c2a;
+      --green: #3ab86e;
+      --dark: #1e3a5f;
+      --card: #ffffff;
+      --shadow: 0 6px 30px rgba(42,143,232,0.13);
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--sky);
+      color: var(--dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── animated sky background ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 200px 80px at 15% 18%, #fff9 60%, transparent 100%),
+        radial-gradient(ellipse 120px 50px at 40% 12%, #fff7 60%, transparent 100%),
+        radial-gradient(ellipse 160px 60px at 72% 20%, #fff8 60%, transparent 100%),
+        linear-gradient(180deg, #b8e4ff 0%, #e0f4ff 55%, #d4f5c4 100%);
+      z-index: -1;
+    }
+
+    /* ── floating shapes ── */
+    .bubbles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; overflow: hidden; }
+    .bubble {
+      position: absolute; border-radius: 50%;
+      opacity: 0.18;
+      animation: float 14s ease-in-out infinite;
+    }
+    .bubble:nth-child(1) { width:90px; height:90px; background:var(--blue); left:8%; top:70%; animation-duration:16s; }
+    .bubble:nth-child(2) { width:55px; height:55px; background:var(--orange); left:80%; top:15%; animation-duration:12s; animation-delay:-4s; }
+    .bubble:nth-child(3) { width:70px; height:70px; background:var(--green); left:55%; top:80%; animation-duration:18s; animation-delay:-7s; }
+    .bubble:nth-child(4) { width:40px; height:40px; background:var(--blue); left:25%; top:30%; animation-duration:10s; animation-delay:-2s; }
+    @keyframes float {
+      0%,100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.06); }
+    }
+
+    /* ── header ── */
+    header {
+      text-align: center;
+      padding: 56px 24px 32px;
+    }
+    .emoji-row {
+      font-size: 3.8rem;
+      letter-spacing: 8px;
+      animation: bounceIn .8s cubic-bezier(.36,1.56,.64,1) both;
+      display: block; margin-bottom: 14px;
+    }
+    @keyframes bounceIn {
+      from { opacity:0; transform:scale(0.5) translateY(-20px); }
+      to   { opacity:1; transform:scale(1) translateY(0); }
+    }
+    h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.15;
+    }
+    h1 span { color: var(--blue); }
+    .subtitle {
+      margin-top: 10px;
+      font-size: 1.05rem;
+      color: #4a6e8a;
+      font-weight: 600;
+    }
+
+    /* ── main container ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* ── date badge ── */
+    .date-badge {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border-radius: 20px;
+      padding: 5px 16px;
+      margin-bottom: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── cards ── */
+    .card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 30px 32px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      border-left: 6px solid var(--blue);
+      animation: slideUp .5s ease both;
+    }
+    .card:nth-child(2) { border-left-color: var(--orange); animation-delay: .07s; }
+    .card:nth-child(3) { border-left-color: var(--green);  animation-delay: .14s; }
+    .card:nth-child(4) { border-left-color: var(--blue);   animation-delay: .21s; }
+    .card:nth-child(5) { border-left-color: var(--orange); animation-delay: .28s; }
+    .card:nth-child(6) { border-left-color: var(--green);  animation-delay: .35s; }
+    .card:nth-child(7) { border-left-color: var(--blue);   animation-delay: .42s; }
+    @keyframes slideUp {
+      from { opacity:0; transform:translateY(24px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .card-icon { font-size: 1.9rem; margin-bottom: 10px; display: block; }
+    .card h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .card p, .card li {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: #2e4a62;
+    }
+    .card ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+    .card li { margin-bottom: 4px; }
+
+    /* ── highlight box ── */
+    .highlight {
+      background: linear-gradient(135deg, #e8f7ff 0%, #d4f5e4 100%);
+      border: 2px dashed var(--green);
+      border-radius: 16px;
+      padding: 18px 22px;
+      margin-top: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .highlight .big { font-size: 1.6rem; }
+
+    /* ── contact card ── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--blue) 0%, #1a6cc4 100%);
+      color: #fff;
+      border-radius: 22px;
+      padding: 30px 32px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(42,143,232,0.3);
+      animation: slideUp .5s ease .49s both;
+    }
+    .contact-card h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .contact-card p { font-size: 0.97rem; opacity: 0.92; line-height: 1.7; }
+    .contact-card a {
+      display: inline-block;
+      margin-top: 14px;
+      background: #fff;
+      color: var(--blue);
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 30px;
+      padding: 10px 26px;
+      font-size: 0.95rem;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .contact-card a:hover { transform: scale(1.05); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+
+    /* ── footer ── */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.82rem;
+      color: #6a8aaa;
+    }
+
+    /* ── how to play ── */
+    .how-card { border-left-color: #f0a500 !important; }
+    .how-list { list-style: none; padding: 0; margin-top: 8px; }
+    .how-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px dashed #daeaf6;
+      font-size: 0.96rem;
+      line-height: 1.7;
+      color: #2e4a62;
+    }
+    .how-list li:last-child { border-bottom: none; }
+    .how-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+
+    /* ── grass strip ── */
+    .grass-strip {
+      width: 100%;
+      height: 28px;
+      background: repeating-linear-gradient(
+        90deg,
+        #5cc96e 0px, #5cc96e 14px,
+        #3ab86e 14px, #3ab86e 28px
+      );
+      border-radius: 0 0 20px 20px;
+      margin-bottom: 36px;
+      opacity: 0.55;
+    }
+  </style>
+</head>
+<body>
+
+<div class="bubbles">
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+</div>
+
+<header>
+  <span class="emoji-row">🌍 🎾 ✈️</span>
+  <h1>Privacy Policy<br/><span>Ball Chaser World Tour</span></h1>
+  <p class="subtitle">Chase the ball across 35 world capitals! 🏆</p>
+</header>
+
+<div class="grass-strip"></div>
+
+<main>
+
+  <div style="text-align:center; margin-bottom:32px;">
+    <span class="date-badge">📅 Effective Date: April 7, 2025 &nbsp;|&nbsp; Last Updated: April 7, 2025</span>
+  </div>
+
+  <!-- 1. Introduction -->
+  <div class="card">
+    <span class="card-icon">👋</span>
+    <h2>Welcome!</h2>
+    <p>
+      Thank you for playing <strong>Ball Chaser World Tour</strong>! This Privacy Policy explains how our app handles information.
+      Our game is a fun, action-packed adventure designed for children up to 7 years old — drag the ball around the world to escape animals, visit 35 capitals, and become the Grand World Champion!
+    </p>
+    <div class="highlight">
+      <span class="big">🔒</span>
+      <span>We are committed to protecting children's privacy. We do <u>not</u> collect, store, share, or sell any personal data — from children or anyone else.</span>
+    </div>
+  </div>
+
+  <!-- 2. No data collected -->
+  <div class="card">
+    <span class="card-icon">🚫</span>
+    <h2>No Data Collection — Ever</h2>
+    <p>Our game does <strong>not</strong> collect any information, including:</p>
+    <ul>
+      <li>No names, usernames, or email addresses</li>
+      <li>No location or GPS data</li>
+      <li>No device identifiers or advertising IDs</li>
+      <li>No photos, contacts, or files from your device</li>
+      <li>No usage analytics or behavioral data</li>
+      <li>No cookies or tracking technologies</li>
+      <li>No crash reports containing personal information</li>
+    </ul>
+    <p style="margin-top:12px;">The game runs entirely on your device. No data is transmitted to us or any third party.</p>
+  </div>
+
+  <!-- 3. Children's Privacy (COPPA / Google Play) -->
+  <div class="card">
+    <span class="card-icon">👶</span>
+    <h2>Children's Privacy (COPPA Compliance)</h2>
+    <p>
+      This app is designed for children under the age of 7 and complies fully with the
+      <strong>Children's Online Privacy Protection Act (COPPA)</strong> and
+      <strong>Google Play's Families Policy</strong>.
+    </p>
+    <ul style="margin-top:10px;">
+      <li>We do <strong>not</strong> direct any data collection at children.</li>
+      <li>We do <strong>not</strong> display any advertisements.</li>
+      <li>We do <strong>not</strong> include in-app purchases.</li>
+      <li>We do <strong>not</strong> require an account or sign-in.</li>
+      <li>We do <strong>not</strong> include any social features, chat, or sharing.</li>
+      <li>We do <strong>not</strong> use third-party SDKs that collect data.</li>
+    </ul>
+  </div>
+
+  <!-- 4. No Ads / No Purchases -->
+  <div class="card">
+    <span class="card-icon">🎮</span>
+    <h2>Ads &amp; In-App Purchases</h2>
+    <p>
+      This game contains <strong>no advertisements</strong> of any kind and <strong>no in-app purchases</strong>.
+      There are no links to external websites, social networks, or third-party services within the app.
+      It is a completely self-contained, offline game.
+    </p>
+  </div>
+
+  <!-- 5. Permissions -->
+  <div class="card">
+    <span class="card-icon">📱</span>
+    <h2>App Permissions</h2>
+    <p>
+      Our game requests <strong>no special permissions</strong> on your device.
+      It does not access the internet, camera, microphone, contacts, storage, or any other sensitive device feature.
+      It is a simple tap-and-play game that works fully offline.
+    </p>
+  </div>
+
+  <!-- 6. Third Parties -->
+  <div class="card">
+    <span class="card-icon">🤝</span>
+    <h2>Third-Party Services</h2>
+    <p>
+      We do <strong>not</strong> integrate any third-party analytics, advertising networks, social login services,
+      or data processors into this app. No data is ever shared with any third party because no data is collected in the first place.
+    </p>
+    <p style="margin-top:10px;">
+      The only platform involved is the <strong>Google Play Store</strong>, which may have its own data practices
+      as the distribution platform. Please review <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--blue);font-weight:700;">Google's Privacy Policy</a> for details about their services.
+    </p>
+  </div>
+
+  <!-- 7. Changes to Policy -->
+  <div class="card">
+    <span class="card-icon">📝</span>
+    <h2>Changes to This Policy</h2>
+    <p>
+      If we ever update this Privacy Policy, we will post the new version on this page and update the
+      "Last Updated" date at the top. Since we do not collect any contact information, we cannot notify users
+      directly — so we encourage parents and guardians to review this page occasionally.
+    </p>
+    <p style="margin-top:10px;">
+      Any future version of the app that introduces data collection will include a prominent update to this policy
+      and will comply fully with all applicable laws and Google Play policies before release.
+    </p>
+  </div>
+
+  <!-- HOW TO PLAY -->
+  <div class="card how-card">
+    <span class="card-icon">🕹️</span>
+    <h2>Instructions — How to Play</h2>
+    <ul class="how-list">
+      <li>
+        <span class="how-icon">🎯</span>
+        <span>A ball appears on screen. An animal will chase it — <strong>touch and HOLD</strong> the ball with your finger, then <strong>DRAG</strong> it around to escape. <em>Warning:</em> if any animal touches the ball — even while you hold it — the game is over!</span>
+      </li>
+      <li>
+        <span class="how-icon">⏱️</span>
+        <span>Survive for <strong>60 seconds</strong> without being caught to complete the level and move to the next country.</span>
+      </li>
+      <li>
+        <span class="how-icon">⚡</span>
+        <span>At 45 seconds remaining a <strong>second animal</strong> appears — it moves randomly (not chasing). At 30 seconds a <strong>third one</strong> joins too!</span>
+      </li>
+      <li>
+        <span class="how-icon">📊</span>
+        <span>Difficulty sets how many balls you must protect: <strong>Easy = 1 ball</strong>, <strong>Medium = 2 balls</strong>, <strong>Hard = 3 balls</strong>. All balls must survive!</span>
+      </li>
+      <li>
+        <span class="how-icon">🎚️</span>
+        <span>In <strong>Settings</strong> you can control: Speed (0–100) of the chaser, Ball Size (Small / Medium / Big) and Animal Size (Small / Medium / Big). Default size is Big.</span>
+      </li>
+      <li>
+        <span class="how-icon">🌍</span>
+        <span>Each level takes you to a new <strong>world capital</strong> with a famous landmark as the background.</span>
+      </li>
+      <li>
+        <span class="how-icon">✈️</span>
+        <span>After each level a <strong>plane flies you</strong> to the next destination — see where you are heading!</span>
+      </li>
+      <li>
+        <span class="how-icon">💾</span>
+        <span>Your progress is <strong>automatically saved</strong> after every level — you can always continue from where you left off.</span>
+      </li>
+      <li>
+        <span class="how-icon">🏆</span>
+        <span>Complete all <strong>35 world capitals</strong> to become the <strong>Grand World Champion</strong> and receive the Golden Globe Trophy!</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 8. Contact -->
+  <div class="contact-card">
+    <h2>📬 Questions or Concerns?</h2>
+    <p>
+      If you have any questions about this Privacy Policy or our app,<br/>
+      we're happy to hear from you. Parents and guardians are always welcome to reach out.
+    </p>
+    <a href="mailto:zakkar@gmail.com">✉️ Contact Us: zakkar@gmail.com</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 Ball Chaser World Tour. All rights reserved.</p>
+  <p style="margin-top:6px;">Safe, simple, and made with ❤️ for kids around the world.</p>
+</footer>
